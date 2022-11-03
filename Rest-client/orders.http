@@ -17,10 +17,40 @@ Content-Type: application/json
 
 {
     "date": "2022-11-1",
-    "product_id": "12345",
-    "productName": "BeerBrosSpecial",
-    "amount": 2,
-    "price": "8.45",
+    "products": [
+        {
+        "product_id": "12345",
+        "productName": "BeerBrosSpecial",
+        "amount": 2,
+        "price": "8.45"
+        }, 
+        {
+        "product_id": "12345",
+        "productName": "BeerBrosSpecial",
+        "amount": 2,
+        "price": "8.45"
+        }, 
+        {
+        "product_id": "12345",
+        "productName": "BeerBrosSpecial",
+        "amount": 2,
+        "price": "8.45"
+        }
+        , 
+        {
+        "product_id": "12345",
+        "productName": "BeerBrosSpecial",
+        "amount": 2,
+        "price": "8.45"
+        }
+        , 
+        {
+        "product_id": "12345",
+        "productName": "BeerBrosSpecial",
+        "amount": 2,
+        "price": "8.45"
+        }
+    ],  
     "firstName": "Mr.Foo",
     "lastName": "Bar",
     "adress": "Jan-Magnussons Plats 2",

@@ -1,13 +1,6 @@
 const mongoose = require('mongoose')
 
-const orderSchema = new mongoose.Schema({
-  // ORDER INFORMATION
-  date: {
-    type: Date,
-    required: true
-  },
-
-  // BASKET INFORMATION
+const productsList = new mongoose.Schema({
   product_id: {
     type: String,
     required: true
@@ -23,8 +16,18 @@ const orderSchema = new mongoose.Schema({
   price: {
     type: String,
     required: true
+  }
+});
+
+const orderSchema = new mongoose.Schema({
+  // ORDER INFORMATION
+  date: {
+    type: Date,
+    required: true
   },
-  
+
+  // BASKET INFORMATION
+  products: [productsList],
 
   // CUSTOMER
   firstName: {
@@ -69,5 +72,7 @@ const orderSchema = new mongoose.Schema({
 }, {
   timestamps: true
 })
+
+
 
 module.exports = mongoose.model('order', orderSchema)
