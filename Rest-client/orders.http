@@ -1,0 +1,42 @@
+@baseURL = https://cna-orders.azurewebsites.net
+//@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzM4MTk0NzdjYzAxYjg5YmE1YmZjY2EiLCJlbWFpbCI6ImthbGxlQGFyY2FkYS5maSIsImlhdCI6MTY2NTM4OTE5OCwiZXhwIjoxNjY1NDc1NTk4fQ.zGTXRQ5K1gxHFloACWs43hFjGCaxMThWXOZz9YTXz3A
+GET {{baseURL}}/orders/
+Content-Type: application/json
+//Authorization: {{token}}
+
+###
+
+DELETE  {{baseURL}}/orders/id?
+Content-Type: application/json
+
+
+###
+
+POST {{baseURL}}/orders/
+Content-Type: application/json
+
+{
+    "date": "2022-11-1",
+    "product_id": "12345",
+    "productName": "BeerBrosSpecial",
+    "amount": 2,
+    "price": "8.45",
+    "firstName": "Mr.Foo",
+    "lastName": "Bar",
+    "adress": "Jan-Magnussons Plats 2",
+    "postCode": "00560",
+    "postalDistrict": "Helsinki",
+    "country": "Finland",
+    "phoneNumber": "0441240567",
+    "email": "fooo.barsson123@gmail.com",
+    "orderType": "Home delivery"
+}
+
+###
+
+PATCH  {{baseURL}}/orders/id
+Content-Type: application/json
+
+{
+    "id": "6338169a46382679a7234766"
+}

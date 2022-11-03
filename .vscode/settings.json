@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/904753a5-47e7-4c48-8835-6d4fd5f9316c/AppServices/subscriptions/904753a5-47e7-4c48-8835-6d4fd5f9316c/resourceGroups/CNA-OrderService_group/providers/Microsoft.Web/sites/CNA-OrderService",
+    "appService.deploySubpath": "."
+}

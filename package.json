@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "azure": "^2.3.1-preview",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "init": "^0.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.0",
+    "node": "^19.0.0",
+    "nodemon": "^2.0.20"
+  },
+  "name": "cna-orderservice",
+  "description": "Karim Kanji, Sebastian Fallström and Oscar Weber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarimKanji/CNA-OrderService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarimKanji/CNA-OrderService/issues"
+  },
+  "homepage": "https://github.com/KarimKanji/CNA-OrderService#readme"
+}
