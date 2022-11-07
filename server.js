@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3040
 
+
 require('dotenv').config()
 
 mongoose.connect(process.env.DB_URL)
@@ -12,6 +13,7 @@ db.on('open', () => console.log('Connected to DB!'))
 
 console.log(process.env.PASS)
 app.use(express.json())
+
 
 const runAlways = (req, res, next) => {
     res.locals.myVariable = ' Hello from runAlways'

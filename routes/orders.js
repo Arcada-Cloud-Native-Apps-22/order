@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Order = require('../models/order')
-//const authToken = require('../middleware/authToken')
+const cors = require('../middleware/cors')
 
 //GET Request för orders
-router.get('/', async (req, res) => {
+router.get('/',cors, async (req, res) => {
 
     try {
         const orders = await Order.find()
@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
 
 
 //POST Request för orders
-router.post('/', async (req, res) => {
+router.post('/',cors, async (req, res) => {
     
-    if (!req.body.products || !Array.isArray(req.body.products) || !req.body.products.length) return res.status(400).send({ msg: "Missing required field products" }) 
+    // if (!req.body.products || !Array.isArray(req.body.products) || !req.body.products.length) return res.status(400).send({ msg: "Missing required field products" }) 
     try {
             const orders = new Order({
                 date: req.body.date,
