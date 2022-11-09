@@ -33,7 +33,8 @@ router.post('/', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 email: req.body.email,
-                orderType: req.body.orderType
+                orderType: req.body.orderType,
+                payment: req.body.payment
             })
             // console.log(req.body.products)
             const newOrder = await orders.save()

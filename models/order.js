@@ -67,6 +67,12 @@ const orderSchema = new mongoose.Schema({
   orderType: {
     type: String,
     required: true
+  },
+
+  // Order payment method 
+  payment: {
+    type: String,
+    required: true
   }
 
 }, {

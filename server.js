@@ -13,6 +13,7 @@ db.on('open', () => console.log('Connected to DB!'))
 
 console.log(process.env.PASS)
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(require('./middleware/cors'));
 
 const runAlways = (req, res, next) => {

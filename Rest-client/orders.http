@@ -59,7 +59,9 @@ Content-Type: application/json
     "country": "Finland",
     "phoneNumber": "0441240567",
     "email": "fooo.barsson123@gmail.com",
-    "orderType": "Home delivery"
+    "orderType": "Home delivery",
+    "payment": "Visa"
+    
 }
 
 ###
