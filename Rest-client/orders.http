@@ -1,8 +1,13 @@
-@baseURL = https://cna-orders.azurewebsites.net
-//@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzM4MTk0NzdjYzAxYjg5YmE1YmZjY2EiLCJlbWFpbCI6ImthbGxlQGFyY2FkYS5maSIsImlhdCI6MTY2NTM4OTE5OCwiZXhwIjoxNjY1NDc1NTk4fQ.zGTXRQ5K1gxHFloACWs43hFjGCaxMThWXOZz9YTXz3A
+//@baseURL = https://cna-orders.azurewebsites.net
+@baseURL = http://localhost:3080
+@token = Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cml0eSBTZXJ2aWNlICgxLjAuMCkiLCJleHAiOjE2NjgxMTYzNTIsInN1YiI6IjYzNWJlMDkwZjFkMWJhN2NiMTdhNWY4YSIsImRhdGEiOnsiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiYWRkcmVzcyI6Ikphbi1NYWdudXMgSmFuc3NvbmluIGF1a2lvIDEiLCJwb3N0YWxDb2RlIjoiNTUwIiwiY2l0eSI6IkhlbHNpbmtpIiwiY291bnRyeSI6IkZpbmxhbmQiLCJlbWFpbCI6ImpvaG4uZG9lQGFyY2FkYS5maSJ9LCJpYXQiOjE2NjgxMDkxNTJ9.qXJFrkiDnRCaWIfDNpFu8Wo8XQw-ZfXmrteeUvEg-Wlh0xadc0HvKMyZCxfsctkRaT1mvF5MquVqtmQv7XNfe9JUUKMswUz6K3Uo6QqhS3f6UWn1w8r8w_IHrpijiyMd6WrSwWjndMbLzo-kuvELvuzc4SgakleNB1LT985xFjuI3NlEmlEEcrIkClFCeIm6SmvUBF08sfDq3eWHU4OXuB5fBUnBMnRkRPcMwPgsveqk00F0M9VDO-bIzfjo-fwUZ6bhIkDyJp5_nR5tzLDef20ENxio8i-0RCbZJcSSYpgkuVma-q_Lwlp8ta3_ZB4Qwe_yYS32lWByRPXGLhAqxA
+
+###
+
 GET {{baseURL}}/orders/
+Authorization: {{token}}
 Content-Type: application/json
-//Authorization: {{token}}
+
 
 ###
 
@@ -13,6 +18,7 @@ Content-Type: application/json
 ###
 
 POST {{baseURL}}/orders/
+Authorization: {{token}}
 Content-Type: application/json
 
 {
@@ -67,6 +73,7 @@ Content-Type: application/json
 ###
 
 PATCH  {{baseURL}}/orders/id
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
