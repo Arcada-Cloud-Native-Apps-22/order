@@ -26,6 +26,8 @@ const runAlways = (req, res, next) => {
     next()
 }
 
+app.use('/', express.static(__dirname + '/public'))
+
 const orderRouter = require('./routes/orders')
 app.use('/orders', orderRouter)
 

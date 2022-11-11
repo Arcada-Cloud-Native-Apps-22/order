@@ -1,6 +1,7 @@
-//@baseURL = https://cna-orders.azurewebsites.net
-@baseURL = http://localhost:3080
-@token = Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cml0eSBTZXJ2aWNlICgxLjAuMCkiLCJleHAiOjE2NjgxMTYzNTIsInN1YiI6IjYzNWJlMDkwZjFkMWJhN2NiMTdhNWY4YSIsImRhdGEiOnsiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiYWRkcmVzcyI6Ikphbi1NYWdudXMgSmFuc3NvbmluIGF1a2lvIDEiLCJwb3N0YWxDb2RlIjoiNTUwIiwiY2l0eSI6IkhlbHNpbmtpIiwiY291bnRyeSI6IkZpbmxhbmQiLCJlbWFpbCI6ImpvaG4uZG9lQGFyY2FkYS5maSJ9LCJpYXQiOjE2NjgxMDkxNTJ9.qXJFrkiDnRCaWIfDNpFu8Wo8XQw-ZfXmrteeUvEg-Wlh0xadc0HvKMyZCxfsctkRaT1mvF5MquVqtmQv7XNfe9JUUKMswUz6K3Uo6QqhS3f6UWn1w8r8w_IHrpijiyMd6WrSwWjndMbLzo-kuvELvuzc4SgakleNB1LT985xFjuI3NlEmlEEcrIkClFCeIm6SmvUBF08sfDq3eWHU4OXuB5fBUnBMnRkRPcMwPgsveqk00F0M9VDO-bIzfjo-fwUZ6bhIkDyJp5_nR5tzLDef20ENxio8i-0RCbZJcSSYpgkuVma-q_Lwlp8ta3_ZB4Qwe_yYS32lWByRPXGLhAqxA
+@baseURL = https://cna-orders.azurewebsites.net
+
+//@baseURL = http://localhost:3080
+@token = Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cml0eSBTZXJ2aWNlICgxLjAuMCkiLCJleHAiOjE2NjgyMDY1MDEsInN1YiI6IjYzNWJlMDkwZjFkMWJhN2NiMTdhNWY4YSIsImRhdGEiOnsiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiYWRkcmVzcyI6Ikphbi1NYWdudXMgSmFuc3NvbmluIGF1a2lvIDEiLCJwb3N0YWxDb2RlIjoiNTUwIiwiY2l0eSI6IkhlbHNpbmtpIiwiY291bnRyeSI6IkZpbmxhbmQiLCJlbWFpbCI6ImpvaG4uZG9lQGFyY2FkYS5maSJ9LCJpYXQiOjE2NjgxOTkzMDF9.g88qSp8d52cQl2aNAexH-OdDOXaZB4cPA8TVOIts5A5XUfZruvq2XrEtD2CnQQU19Ft1ui5DiQaS44V__Y2iijLXgBxNWZLbvyIDWqBVnWSJzQscjXZvG2x6ulX21vZc65febK3SbE60MICAP8K9uaKGQrnCRmW85S3ooDSVqMsKmVBSr-1pxw46cXZSukGsu-gbRof980rcEoKszzB9velWL6E8MdkS2-vway-Kz6579WGywNRKn75iw2JdPSmIjW7MKrUFsdGQrOIQuWkdGSwHjbmU_UpR7s0F7UXH4I0hWWV4mcJo71FLsTixWk8qA4XmcnPc6oO6EwULCQRReQ
 
 ###
 
@@ -8,12 +9,11 @@ GET {{baseURL}}/orders/
 Authorization: {{token}}
 Content-Type: application/json
 
-
 ###
 
-DELETE  {{baseURL}}/orders/id?
+GET {{baseURL}}/orders/customers
+Authorization: {{token}}
 Content-Type: application/json
-
 
 ###
 
@@ -28,42 +28,24 @@ Content-Type: application/json
         "product_id": "12345",
         "productName": "BeerBrosSpecial",
         "amount": 2,
-        "price": "8.45"
+        "price": "8.45",
+        "warehouse": "jees"
         }, 
         {
         "product_id": "12345",
         "productName": "BeerBrosSpecial",
         "amount": 2,
-        "price": "8.45"
-        }, 
-        {
-        "product_id": "12345",
-        "productName": "BeerBrosSpecial",
-        "amount": 2,
-        "price": "8.45"
-        }
-        , 
-        {
-        "product_id": "12345",
-        "productName": "BeerBrosSpecial",
-        "amount": 2,
-        "price": "8.45"
-        }
-        , 
-        {
-        "product_id": "12345",
-        "productName": "BeerBrosSpecial",
-        "amount": 2,
-        "price": "8.45"
+        "price": "8.45",
+        "warehouse": "jees"
         }
     ],  
-    "firstName": "Mr.Foo",
+    "firstName": "Mr.Kekko",
     "lastName": "Bar",
     "adress": "Jan-Magnussons Plats 2",
     "postCode": "00560",
     "postalDistrict": "Helsinki",
     "country": "Finland",
-    "phoneNumber": "0441240567",
+    "phoneNumber": "0451240567",
     "email": "fooo.barsson123@gmail.com",
     "orderType": "Home delivery",
     "payment": "Visa"
@@ -71,11 +53,3 @@ Content-Type: application/json
 }
 
 ###
-
-PATCH  {{baseURL}}/orders/id
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-{
-    "id": "6338169a46382679a7234766"
-}

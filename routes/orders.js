@@ -19,6 +19,20 @@ router.get('/', authToken, async (req, res) => {
     }
 })
 
+//GET customer information
+router.get('/customers', authToken, async (req, res) => {
+
+    try {
+        const orders = await Order.find({}, ['firstName', 'lastName', 'adress', 'postCode', 'postalDistrict', 'country', 'phoneNumber', 'email'].sort())
+        
+        res.send(orders)
+
+    } catch (error) {
+        res.status(500).send({ msg: error.message })
+
+    }
+})
+
 
 //POST Request för orders
 router.post('/', authToken, async (req, res) => {
@@ -41,12 +55,14 @@ router.post('/', authToken, async (req, res) => {
             })
             // console.log(req.body.products)
             const newOrder = await orders.save()
-    
+            
+
+            // Invoice POST
             const datan = await fetch("https://wgyffa47l5.execute-api.us-east-1.amazonaws.com/dev/createpdf", {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
-                    'Authorization': ''
+                    'authorizationToken': 'n9LiffFxi8zo%Fr*yqHcjNqvQKUhHq%WE*#avbFnj%i6n2MMtZVsqRxm@8A*M9wm'
                 },
                 body: JSON.stringify({
                     "orderID": newOrder.id,
@@ -58,9 +74,21 @@ router.post('/', authToken, async (req, res) => {
                 })
 
             })
+
+            // Shipping POST
+            // const datan = await fetch("", {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-type': 'application/json',
+            //         'Authorization': ''
+            //     }
+            //     })
+
+            // })
+            
             const data = await datan.json()
 
-            res.send({invoice: newOrder})
+            res.send({Saved: orders, Invoice: data})
         } 
     catch (error) {
         

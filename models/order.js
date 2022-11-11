@@ -16,6 +16,10 @@ const productsList = new mongoose.Schema({
   price: {
     type: String,
     required: true
+  },
+  warehouse: {
+    type: String, 
+    required: true
   }
 });
 
