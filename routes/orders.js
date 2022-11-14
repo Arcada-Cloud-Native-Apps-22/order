@@ -32,7 +32,25 @@ router.get('/customers', authToken, async (req, res) => {
 
     }
 })
-
+// INVENTORY PATCH!
+// router.patch('/:warehouse/:produktID/', authtoken, async (req, res) => {
+//     try {
+//         const find = await Products.findOne({
+//             warehouse: req.params.warehouse, 
+//             products: req.params.produktID,
+//             amount: req.body.amount
+//         })
+//         if (find)  {
+//             const updatedAmount = await Products.findOneAndUpdate(
+                
+//             )
+//         }else {
+//             res.status(500).send({ msg: "Can't find" })
+//         }
+//     } catch (error) {
+//         res.status(500).send({ msg: error.message })
+//     }
+// })
 
 //POST Request för orders
 router.post('/', authToken, async (req, res) => {
@@ -85,6 +103,21 @@ router.post('/', authToken, async (req, res) => {
             //     })
 
             // })
+
+            // Inventory PATCH
+            // const inventory = await fetch('https://beer-inventory-api.azurewebsites.net/warehouse/productID/', {
+            //     method: 'PATCH',
+            //     headers: {
+            //         'Content-type': 'application/json; charset=UTF-8',
+            //         'Authorization': 'Bearer pXsP0618KS32Aoov13iORZf2n2dbni'
+            //     },
+            //     body: JSON.stringify({
+            //         "amount": "12",
+            //     }),
+            // })
+            
+            //INVENTORY SIDA
+            // PATCH = GET(INVENTORY) -> PATCH/ GETTED INVENTORY -(VÅR AMOUNT)
             
             const data = await datan.json()
 
