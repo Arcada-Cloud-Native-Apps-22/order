@@ -19,19 +19,34 @@ router.get('/', authToken, async (req, res) => {
     }
 })
 
-//GET customer information
+//GET customer information, THIS WILL TAKE AWAY DUBLICATE ORDERS / INFORMATION!
 router.get('/customers', authToken, async (req, res) => {
 
     try {
-        const orders = await Order.find({}, ['firstName', 'lastName', 'adress', 'postCode', 'postalDistrict', 'country', 'phoneNumber', 'email'].sort())
-        
-        res.send(orders)
+
+        //const orders = await Order.find()
+        const result = await Order.aggregate([
+            {$group: {"_id": {
+                firstname: "$firstName",
+                lastName: "$lastName",
+                adress: "$adress",
+                postCode: "$postCode",
+                postalDistrict: "$postalDistrict",
+                email: "$email", 
+                phoneNumber: "$phoneNumber"
+            }}},
+        ])
+        //console.log(result)
+        //const orders = await Order.find().distinct('email')
+            
+        res.send(result)
 
     } catch (error) {
         res.status(500).send({ msg: error.message })
 
     }
 })
+
 // INVENTORY PATCH!
 // router.patch('/:warehouse/:produktID/', authtoken, async (req, res) => {
 //     try {
