@@ -1,7 +1,7 @@
 @baseURL = https://cna-orders.azurewebsites.net
 
 //@baseURL = http://localhost:3080
-@token = Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cml0eSBTZXJ2aWNlICgxLjAuMCkiLCJleHAiOjE2NjgyMDY1MDEsInN1YiI6IjYzNWJlMDkwZjFkMWJhN2NiMTdhNWY4YSIsImRhdGEiOnsiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiYWRkcmVzcyI6Ikphbi1NYWdudXMgSmFuc3NvbmluIGF1a2lvIDEiLCJwb3N0YWxDb2RlIjoiNTUwIiwiY2l0eSI6IkhlbHNpbmtpIiwiY291bnRyeSI6IkZpbmxhbmQiLCJlbWFpbCI6ImpvaG4uZG9lQGFyY2FkYS5maSJ9LCJpYXQiOjE2NjgxOTkzMDF9.g88qSp8d52cQl2aNAexH-OdDOXaZB4cPA8TVOIts5A5XUfZruvq2XrEtD2CnQQU19Ft1ui5DiQaS44V__Y2iijLXgBxNWZLbvyIDWqBVnWSJzQscjXZvG2x6ulX21vZc65febK3SbE60MICAP8K9uaKGQrnCRmW85S3ooDSVqMsKmVBSr-1pxw46cXZSukGsu-gbRof980rcEoKszzB9velWL6E8MdkS2-vway-Kz6579WGywNRKn75iw2JdPSmIjW7MKrUFsdGQrOIQuWkdGSwHjbmU_UpR7s0F7UXH4I0hWWV4mcJo71FLsTixWk8qA4XmcnPc6oO6EwULCQRReQ
+@token = Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cml0eSBTZXJ2aWNlICgxLjAuMCkiLCJleHAiOjE2Njg1MTg0OTUsInN1YiI6IjYzNWJlMDkwZjFkMWJhN2NiMTdhNWY4YSIsImRhdGEiOnsiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiYWRkcmVzcyI6Ikphbi1NYWdudXMgSmFuc3NvbmluIGF1a2lvIDEiLCJwb3N0YWxDb2RlIjoiNTUwIiwiY2l0eSI6IkhlbHNpbmtpIiwiY291bnRyeSI6IkZpbmxhbmQiLCJlbWFpbCI6ImpvaG4uZG9lQGFyY2FkYS5maSJ9LCJpYXQiOjE2Njg1MTEyOTV9.HM7tSskvQohrajOZWDSDYwrrQobzgsIZ7I-HExkg2tAOJixTHKTGiBeg0SBgWa8N2H2yc_bRfDH80QMf5ddJXDhxP56sIpgj1xbLoBahG8X50aRz4vixZcMj-McTQgV9OaBqfhtYsWkwpAkJVpCR3ItjG1mJAQE1SMTForWa8hYQzhhZBidnRy68nYx4vM552WUOML-qHokZo_R5jOL9fdarmbAKoOTNG7ns7OnpGZqjUZpcsa8PzTFaDixGAO_mIdQ52HwRXqk-XO9YclUIKG7UhkbmtCvYOE9RoIS30REu-UTL5d8ht3xY4-sJi4D_uoSwvXYq6kJvhVrTHq5h-A
 
 ###
 
@@ -40,7 +40,7 @@ Content-Type: application/json
         }
     ],  
     "firstName": "Mr.Kekko",
-    "lastName": "Bar",
+    "lastName": "BarSS",
     "adress": "Jan-Magnussons Plats 2",
     "postCode": "00560",
     "postalDistrict": "Helsinki",
@@ -53,3 +53,5 @@ Content-Type: application/json
 }
 
 ###
+
+
