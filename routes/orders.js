@@ -91,7 +91,7 @@ router.post('/', authToken, async (req, res) => {
             
 
             // Invoice POST
-            const datan = await fetch("https://wgyffa47l5.execute-api.us-east-1.amazonaws.com/dev/createpdf", {
+            const datanShipping = await fetch("https://wgyffa47l5.execute-api.us-east-1.amazonaws.com/dev/createpdf", {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
@@ -109,15 +109,26 @@ router.post('/', authToken, async (req, res) => {
             })
 
             // Shipping POST
-            // const datan = await fetch("", {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-type': 'application/json',
-            //         'Authorization': ''
-            //     }
-            //     })
-
-            // })
+            const datanInvoice = await fetch("https://cna22-invoice.azurewebsites.net/invoices/createInvoice", {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "date": newOrder.date,
+                    "products": newOrder.products || [],
+                    "firstName": newOrder.firstName,
+                    "lastName": newOrder.lastName,
+                    "adress": newOrder.adress,
+                    "postCode": newOrder.postCode,
+                    "postalDistrict": newOrder.postalDistrict,
+                    "country": newOrder.country,
+                    "phoneNumber": newOrder.phoneNumber,
+                    "email": newOrder.email,
+                    "orderType": newOrder.orderType,
+                    "payment": newOrder.payment 
+                })
+            })
 
             // Inventory PATCH
             // const inventory = await fetch('https://beer-inventory-api.azurewebsites.net/warehouse/productID/', {
@@ -133,10 +144,10 @@ router.post('/', authToken, async (req, res) => {
             
             //INVENTORY SIDA
             // PATCH = GET(INVENTORY) -> PATCH/ GETTED INVENTORY -(VÅR AMOUNT)
-            
-            const data = await datan.json()
+            const data1 = await datanInvoice.json()
+            const data = await datanShipping.json()
 
-            res.send({Saved: orders, Invoice: data})
+            res.send({Saved: orders, Shipping: data, Invoice: data1})
         } 
     catch (error) {
         
